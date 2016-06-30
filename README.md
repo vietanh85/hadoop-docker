@@ -74,6 +74,6 @@ TBD
 TBD
 
 ## Todos
-- [x] Ablitiy to run in Pseudo-Distributed Operation
-- [ ] Ability to run in Cluster Operation
+- [x] Ablitiy to run Pseudo-Distributed Operation
+- [ ] Ability to run Cluster Operation
 - [ ] Enable Docker Swarm to run and deploy in multiple hosts
