@@ -1,6 +1,6 @@
 # Apache Hadoop Docker image
 
-# Before we start
+## Before we start
 
 I'm learning Hadoop and try to leverage my knowlege in Docker to containerize the Hadoop platform. This project will help you to build and run Hadoop modules inside Docker containers. This project was created just for learning purpose, it was not tested in the production systems.
 
@@ -30,15 +30,15 @@ TBD
 
 TBD
 
-# Pull the images
+## Pull the images
 
-# Start the containers
+## Start the containers
 
 ### Start a Pseudo-Distributed conttainer
 ### Start a Cluster conttainers
 ### Start Cluster in multiple hosts
 
-# Todos
+## Todos
 - ~Ablitiy to run in Pseudo-Distributed mode~
 - Ability to run in Cluster mode
 - Enable Docker Swarm to run and deploy in multiple hosts
