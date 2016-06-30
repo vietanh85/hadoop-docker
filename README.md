@@ -22,7 +22,7 @@ I want to run Hadoop platform in cluster and I want to reuse my code and Docker 
 
 That's why I need to create Dockerfiles for each of them.
 
-# Build the images
+## Build the images
 
 TBD
 
