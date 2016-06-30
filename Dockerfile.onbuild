@@ -25,10 +25,10 @@ RUN mkdir -p /var/run/sshd /var/log/supervisor \
 COPY conf/*.* $HADOOP_CONF_DIR/
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# ONBUILD ADD bootstrap.sh $HADOOP_HOME/bin/bootstrap.sh
-# ONBUILD RUN chown root:root $HADOOP_HOME/bin/bootstrap.sh && chmod 700 $HADOOP_HOME/bin/bootstrap.sh
-
 # Hdfs ports
-EXPOSE 50010 50020 50070 50075 50090 9000
+EXPOSE 50010 50020 50070 50075 50090 9000 
+
+# Yarn ports
+EXPOSE 8088
 
 CMD [ "supervisord" ]
