@@ -39,6 +39,6 @@ TBD
 ### Start Cluster in multiple hosts
 
 ## Todos
-- ~Ablitiy to run in Pseudo-Distributed mode~
-- Ability to run in Cluster mode
-- Enable Docker Swarm to run and deploy in multiple hosts
+- [x] Ablitiy to run in Pseudo-Distributed mode
+- [] Ability to run in Cluster mode
+- [] Enable Docker Swarm to run and deploy in multiple hosts
