@@ -43,12 +43,12 @@ The problem is that I'm building the hierarchy of the Docker images, which conta
 You can run your Hadoop platform in [Pseudo-Distributed Operation](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html#Pseudo-Distributed_Operation) by running this command:
 
 ```
-docker-compose up
+docker-compose -f docker-compose.pseudo.yml up
 ```
 
 After running the command, your Pseudo-Distributed Hadoop platform will be ready with HDFS and Yarn up and running. To access to your HDFS Name Node web interface, you can go to `http://localhost:50070`. To access to Resource Manager, you can go to `http://localhost:8088`
 
-#### Testing
+##### Testing
 By default, docker-compose will set your container name to `hadoopdocker_hdfs_master_1`, to see your container name, you can run `docker ps`. Bellows are the steps to test your containers:
 
 ```
