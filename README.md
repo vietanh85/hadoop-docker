@@ -53,16 +53,16 @@ By default, docker-compose will set your container name to `hadoopdocker_hdfs_ma
 
 ```
 # Make the HDFS directories required to execute MapReduce jobs
-$ docker exec -it hadoopdocker_hdfs_master_1 bash -c 'hdfs dfs -mkdir -p /user/root/input'
+$ docker exec hadoopdocker_hdfs_master_1 hdfs dfs -mkdir -p /user/root/input
 
 # Copy the input files into the distributed filesystem
-$ docker exec -it hadoopdocker_hdfs_master_1 bash -c 'hdfs dfs -put etc/hadoop/*.xml input'
+$ docker exec hadoopdocker_hdfs_master_1 hdfs dfs -put etc/hadoop/*.xml input
 
 # Run some of the examples provided:
-$ docker exec -it hadoopdocker_hdfs_master_1 bash -c 'hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.1.jar grep input output \'dfs[a-z.]+\''
+$ docker exec hadoopdocker_hdfs_master_1 hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.1.jar grep input output 'dfs[a-z.]+'
 
 # View the output files on the distributed filesystem:
-$ docker exec -it hadoopdocker_hdfs_master_1 bash -c 'hdfs dfs -cat output/*'
+$ docker exec hadoopdocker_hdfs_master_1 hdfs dfs -cat output/*
 ```
 
 ### Start a Cluster conttainers
