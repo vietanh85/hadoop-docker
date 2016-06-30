@@ -65,7 +65,7 @@ $ docker exec hadoopdocker_hdfs_master_1 bash -c "hadoop jar share/hadoop/mapred
 $ docker exec hadoopdocker_hdfs_master_1 bash -c "hdfs dfs -cat output/*"
 ```
 
-### Start a Cluster conttainers
+### Start Cluster containers
 
 TBD
 
