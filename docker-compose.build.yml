@@ -6,10 +6,18 @@ services:
       context: '.'
       dockerfile: Dockerfile.onbuild
 
-  hdfs_master:
-    image: 'vietanh85/hdfs:2.7.1'
+  hdfs_name:
+    image: 'vietanh85/hdfs-name:2.7.1'
     build: 
       context: '.'
-      dockerfile: Dockerfile.hdfs
+      dockerfile: Dockerfile.hdfs.name
+    depends_on:
+    - hadoop_onbuild
+
+  hdfs_data:
+    image: 'vietanh85/hdfs-data:2.7.1'
+    build: 
+      context: '.'
+      dockerfile: Dockerfile.hdfs.data
     depends_on:
     - hadoop_onbuild

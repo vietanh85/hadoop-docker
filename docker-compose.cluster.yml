@@ -1,0 +1,29 @@
+version: '2'
+services:
+  hdfs_name:
+    image: 'vietanh85/hdfs-name:2.7.1'
+    build: 
+      context: '.'
+      dockerfile: Dockerfile.hdfs.name
+    ports:
+    - '50010:50010'
+    - '50020:50020'
+    - '50070:50070'
+    - '50075:50075'
+    - '50090:50090'
+    - '9000:9000'
+    - '8088:8088'
+    - '8032:8032'
+    - '19888:19888'
+    - '10800:10800'
+    - '10020:10020'
+
+  hdfs_data:
+    image: 'vietanh85/hdfs-data:2.7.1'
+    build: 
+      context: '.'
+      dockerfile: Dockerfile.hdfs.data
+    links:
+    - 'hdfs_name:namenode'
+    environment:
+      NAME_NODE_HOST: 'namenode'
