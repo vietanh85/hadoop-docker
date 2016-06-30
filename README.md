@@ -10,7 +10,7 @@ If you wish to push your images to your Docker repo for future use, you need to 
 
 ### Why `onbuild`?
 
-I want to run Hadoop platform in cluster and I want to reuse my code and Docker layers so I decided to implement the hirachi of my Docker images as bellow:
+I want to run Hadoop platform in cluster and I want to reuse my code and Docker layers so I decided to implement the tree hierarchy of my Docker images as bellow:
 
 ```
 	hadoop-onbuild
