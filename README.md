@@ -2,7 +2,7 @@
 
 ## Before we start
 
-I'm learning Hadoop and try to leverage my knowlege in Docker to containerize the Hadoop platform. This project will help you to build and run Hadoop modules inside Docker containers. This project was created just for learning purpose, it was not tested in the production systems.
+I'm learning Hadoop and Docker. I want to leverage them to containerize the Hadoop platform. This project will help you to build and run Hadoop modules inside Docker containers. This project was created just for learning purpose, it was not tested in the production systems.
 
 ### Use your Docker repo
 
