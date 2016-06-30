@@ -49,7 +49,7 @@ docker-compose up
 After running the command, your Pseudo-Distributed Hadoop platform will be ready with HDFS and Yarn up and running. To access to your HDFS Name Node web interface, you can go to `http://localhost:50070`. To access to Resource Manager, you can go to `http://localhost:8088`
 
 #### Testing
-By default, docker-compose will set your container name to `hadoopdocker_hdfs_master_1`, to see your container name, you can run `docker ps`
+By default, docker-compose will set your container name to `hadoopdocker_hdfs_master_1`, to see your container name, you can run `docker ps`. Bellows are the steps to test your containers:
 
 ```
 # Make the HDFS directories required to execute MapReduce jobs
