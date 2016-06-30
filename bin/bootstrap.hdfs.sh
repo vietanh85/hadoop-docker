@@ -7,4 +7,5 @@ echo "$IP \t$(hostname)" >> /etc/hosts
 
 hdfs namenode -format \
     && /usr/sbin/sshd \
+    && start-yarn.sh \
     && start-dfs.sh && hdfs dfs -mkdir -p /hbase && hdfs dfs -chown root:root /hbase

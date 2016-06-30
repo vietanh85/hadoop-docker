@@ -25,6 +25,8 @@ RUN mkdir -p /var/run/sshd /var/log/supervisor \
 COPY conf/*.* $HADOOP_CONF_DIR/
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+WORKDIR $HADOOP_HOME
+
 # Hdfs ports
 EXPOSE 50010 50020 50070 50075 50090 9000 
 
