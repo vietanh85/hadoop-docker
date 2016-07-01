@@ -33,6 +33,8 @@ To build the images automatically, you can just simply run this command and `doc
 docker-compose -f docker-compose.build.yml build
 ```
 
+To check the build result, you can run `docker images`. You will see your new images there.
+
 ## Start the containers
 
 ### Start a Pseudo-Distributed container
@@ -44,6 +46,8 @@ docker-compose -f docker-compose.pseudo.yml up
 ```
 
 Now, your Pseudo-Distributed Hadoop system will be ready with HDFS and Yarn up and running inside a single container. If you run `docker ps` you will see there is one new container has been started. To access to your HDFS Name Node web interface, you can go to `http://localhost:50070`. To access to Resource Manager, you can go to `http://localhost:8088`.
+
+[IMG]
 
 ##### Testing
 By default, docker-compose will set your container name to `hadoopdocker_hadoop_pseudo_1`, to see your container name, you can run `docker ps`. Bellows are the steps to test your containers:
@@ -64,7 +68,15 @@ $ docker exec hadoopdocker_hadoop_pseudo_1 bash -c "hdfs dfs -cat output/*"
 
 ### Start Cluster containers
 
-TBD
+Now it's the time to run your Hadoop system in "fully" distributed mode. I put the word "fully" inside double-quotes, since it is not a real fully distributed system which run with multiple hosts. Instead of that, we will run our cluster inside multiple containers and all of them will run on one host.
+
+To start your [Hadoop Cluster](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/ClusterSetup.html), you can run this command:
+
+```
+docker-compose -f docker-compose.cluster.yml up
+```
+
+[IMG]
 
 ### Start Cluster in multiple hosts
 
