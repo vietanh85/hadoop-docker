@@ -15,7 +15,7 @@ services:
     - hadoop_onbuild
   
   yarn:
-    image: 'vietanh85/yarn:2.7.1'
+    image: 'vietanh85/hadoop-yarn:2.7.1'
     build: 
       context: '.'
       dockerfile: Dockerfile.yarn
@@ -23,7 +23,7 @@ services:
     - hadoop_onbuild
 
   hdfs_name:
-    image: 'vietanh85/hdfs-name:2.7.1'
+    image: 'vietanh85/hadoop-hdfs-name:2.7.1'
     build: 
       context: '.'
       dockerfile: Dockerfile.hdfs.name
@@ -31,7 +31,7 @@ services:
     - hadoop_onbuild
 
   hdfs_data:
-    image: 'vietanh85/hdfs-data:2.7.1'
+    image: 'vietanh85/hadoop-hdfs-data:2.7.1'
     build: 
       context: '.'
       dockerfile: Dockerfile.hdfs.data

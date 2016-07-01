@@ -14,6 +14,7 @@ I want to run Hadoop platform in cluster and I want to reuse my code and Docker 
 
 ```
 hadoop-onbuild
+	|__ hadoop-pseudo
 	|__ hadoop-hdfs-name
 	|__ hadoop-hdfs-data
 	|__ hadoop-yarn
@@ -46,10 +47,10 @@ You can run your Hadoop platform in [Pseudo-Distributed Operation](http://hadoop
 docker-compose -f docker-compose.pseudo.yml up
 ```
 
-After running the command, your Pseudo-Distributed Hadoop platform will be ready with HDFS and Yarn up and running. To access to your HDFS Name Node web interface, you can go to `http://localhost:50070`. To access to Resource Manager, you can go to `http://localhost:8088`
+After running the command, your Pseudo-Distributed Hadoop platform will be ready with HDFS and Yarn up and running. To access to your HDFS Name Node web interface, you can go to `http://localhost:50070`. To access to Resource Manager, you can go to `http://localhost:8088`.
 
 ##### Testing
-By default, docker-compose will set your container name to `hadoopdocker_hdfs_master_1`, to see your container name, you can run `docker ps`. Bellows are the steps to test your containers:
+By default, docker-compose will set your container name to `hadoopdocker_hadoop_pseudo_1`, to see your container name, you can run `docker ps`. Bellows are the steps to test your containers:
 
 ```
 # Make the HDFS directories required to execute MapReduce jobs

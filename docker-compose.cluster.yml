@@ -1,7 +1,7 @@
 version: '2'
 services:
   hdfs_name:
-    image: 'vietanh85/hdfs-name:2.7.1'
+    image: 'vietanh85/hadoop-hdfs-name:2.7.1'
     build: 
       context: '.'
       dockerfile: Dockerfile.hdfs.name
@@ -14,7 +14,7 @@ services:
     - '9000:9000'
 
   yarn:
-    image: 'vietanh85/yarn:2.7.1'
+    image: 'vietanh85/hadoop-yarn:2.7.1'
     build: 
       context: '.'
       dockerfile: Dockerfile.yarn
@@ -30,7 +30,7 @@ services:
       NAME_NODE_HOST: 'namenode'
 
   hdfs_data:
-    image: 'vietanh85/hdfs-data:2.7.1'
+    image: 'vietanh85/hadoop-hdfs-data:2.7.1'
     build: 
       context: '.'
       dockerfile: Dockerfile.hdfs.data
