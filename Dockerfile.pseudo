@@ -1,0 +1,6 @@
+FROM vietanh85/hadoop-onbuild:2.7.1
+
+ADD bin/bootstrap.pseudo.sh $HADOOP_HOME/bin/bootstrap.sh
+RUN chown root:root $HADOOP_HOME/bin/bootstrap.sh && chmod 700 $HADOOP_HOME/bin/bootstrap.sh
+
+CMD [ "supervisord" ]

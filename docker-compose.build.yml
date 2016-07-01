@@ -6,6 +6,22 @@ services:
       context: '.'
       dockerfile: Dockerfile.onbuild
 
+  hadoop_pseudo:
+    image: 'vietanh85/hadoop-pseudo:2.7.1'
+    build: 
+      context: '.'
+      dockerfile: Dockerfile.pseudo
+    depends_on:
+    - hadoop_onbuild
+  
+  yarn:
+    image: 'vietanh85/hdfs-yarn:2.7.1'
+    build: 
+      context: '.'
+      dockerfile: Dockerfile.yarn
+    depends_on:
+    - hadoop_onbuild
+
   hdfs_name:
     image: 'vietanh85/hdfs-name:2.7.1'
     build: 

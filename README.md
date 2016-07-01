@@ -2,7 +2,7 @@
 
 ## Before we start
 
-I'm learning Hadoop and Docker. I want to leverage them to containerize the Hadoop platform. This project will help you to build and run Hadoop modules inside Docker containers. This project was created just for learning purpose, it was not tested in the production systems.
+I'm learning Hadoop and Docker. I want to leverage them to containerize the Hadoop platform. This project will help you to build and run Hadoop modules inside Docker containers. I create this project just for learning purpose, it's not tested in the production systems.
 
 ### Use your Docker repo
 
@@ -53,16 +53,16 @@ By default, docker-compose will set your container name to `hadoopdocker_hdfs_ma
 
 ```
 # Make the HDFS directories required to execute MapReduce jobs
-$ docker exec hadoopdocker_hdfs_master_1 bash -c "hdfs dfs -mkdir -p /user/root/input"
+$ docker exec hadoopdocker_hadoop_pseudo_1 bash -c "hdfs dfs -mkdir -p /user/root/input"
 
 # Copy the input files into the distributed filesystem
-$ docker exec hadoopdocker_hdfs_master_1 bash -c "hdfs dfs -put etc/hadoop/*.xml input"
+$ docker exec hadoopdocker_hadoop_pseudo_1 bash -c "hdfs dfs -put etc/hadoop/*.xml input"
 
 # Run some of the examples provided:
-$ docker exec hadoopdocker_hdfs_master_1 bash -c "hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.1.jar grep input output 'dfs[a-z.]+'"
+$ docker exec hadoopdocker_hadoop_pseudo_1 bash -c "hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.1.jar grep input output 'dfs[a-z.]+'"
 
 # View the output files on the distributed filesystem:
-$ docker exec hadoopdocker_hdfs_master_1 bash -c "hdfs dfs -cat output/*"
+$ docker exec hadoopdocker_hadoop_pseudo_1 bash -c "hdfs dfs -cat output/*"
 ```
 
 ### Start Cluster containers
