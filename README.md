@@ -19,6 +19,12 @@ All of them could be download in the same package of Hadoop, the only different 
 
 ![Docker images hierarchy](/img/docker-images-heirarchy.png?raw=true "Docker images hierarchy")
 
+### Why `docker-compose.build.yml`?
+
+You may know that `docker-compose` is a great tool to define your services with dependencies and wire them up together with one simple command `docker-compose up`.
+
+If I use the same `docker-compose.yml` file for both build and run purpose, `docker-compose` will automatically wire up all the services including the base-images (onbuild) which I don't want to start it up. I decide to create the `docker-compose.build.yml` just for build purpose.
+
 ## Build the images
 
 To build the images automatically, you can just simply run this command and `docker-compose` will take care of the rest:
@@ -26,12 +32,6 @@ To build the images automatically, you can just simply run this command and `doc
 ```
 docker-compose -f docker-compose.build.yml build
 ```
-
-## Why `docker-compose.build.yml`?
-
-You may know that `docker-compose` is a great tool to define your services with dependencies and wire them up together with one simple command `docker-compose up`.
-
-If I use the same `docker-compose.yml` file for both build and run purpose, `docker-compose` will automatically wire up all the services including the base-images (onbuild) which I don't want to start it up. I decide to create the `docker-compose.build.yml` just for build purpose.
 
 ## Start the containers
 
