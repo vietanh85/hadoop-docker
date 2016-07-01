@@ -5,6 +5,6 @@
     </property>
     <property>
         <name>yarn.resourcemanager.hostname</name>
-        <value>@NODE_MANAGER_IP@</value>
+        <value>@YARN_IP@</value>
     </property>
 </configuration>

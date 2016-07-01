@@ -1,17 +1,5 @@
 version: '2'
 services:
-  yarn:
-    image: 'vietanh85/hdfs-yarn:2.7.1'
-    build: 
-      context: '.'
-      dockerfile: Dockerfile.yarn
-    ports:
-    - '8088:8088'
-    - '8032:8032'
-    - '19888:19888'
-    - '10800:10800'
-    - '10020:10020'
-
   hdfs_name:
     image: 'vietanh85/hdfs-name:2.7.1'
     build: 
@@ -24,15 +12,22 @@ services:
     - '50075:50075'
     - '50090:50090'
     - '9000:9000'
-    # - '8088:8088'
-    # - '8032:8032'
-    # - '19888:19888'
-    # - '10800:10800'
-    # - '10020:10020'
+
+  yarn:
+    image: 'vietanh85/yarn:2.7.1'
+    build: 
+      context: '.'
+      dockerfile: Dockerfile.yarn
+    ports:
+    - '8088:8088'
+    - '8032:8032'
+    - '19888:19888'
+    - '10800:10800'
+    - '10020:10020'
     links:
-    - 'yarn'
+    - 'hdfs_name:namenode'
     environment:
-      NODE_MANAGER_HOST: 'yarn'
+      NAME_NODE_HOST: 'namenode'
 
   hdfs_data:
     image: 'vietanh85/hdfs-data:2.7.1'
@@ -44,4 +39,4 @@ services:
     - 'yarn'
     environment:
       NAME_NODE_HOST: 'namenode'
-      NODE_MANAGER_HOST: 'yarn'
+      YARN_HOST: 'yarn'

@@ -15,7 +15,7 @@ services:
     - hadoop_onbuild
   
   yarn:
-    image: 'vietanh85/hdfs-yarn:2.7.1'
+    image: 'vietanh85/yarn:2.7.1'
     build: 
       context: '.'
       dockerfile: Dockerfile.yarn
