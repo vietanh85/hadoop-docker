@@ -37,7 +37,7 @@ docker-compose -f docker-compose.build.yml build
 
 ### Start a Pseudo-Distributed container
 
-You can run your Hadoop platform in [Pseudo-Distributed Operation](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html#Pseudo-Distributed_Operation) by running this command:
+You can run your [Pseudo-Distributed Operation Hadoop system](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html#Pseudo-Distributed_Operation) by running this command:
 
 ```
 docker-compose -f docker-compose.pseudo.yml up
