@@ -2,7 +2,7 @@
 
 ## Before we start
 
-I'm falling in love with Hadoop and Docker. I want to leverage them to "containerize" the Hadoop cluster. I create this project to build and run Hadoop modules inside Docker containers. It just for practical purpose and is not tested in the production environment.
+I'm falling in love with Hadoop and Docker. I want to leverage them to "containerize" the Hadoop cluster. I create this project to build and run Hadoop modules inside Docker containers. It is just for practical purpose and not tested in the production environment.
 
 ### Use your Docker repo
 
