@@ -1,4 +1,4 @@
-# Apache Hadoop Docker image
+# Apache Hadoop Cluster Docker image
 
 ## Before we start
 
