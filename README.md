@@ -96,6 +96,6 @@ docker-compose -f docker-compose.cluster.yml scale hdfs_data=3
 TBD
 
 ## Todos
-- [x] Ablitiy to run Pseudo-Distributed Operation
-- [x] Ability to run Cluster Operation
-- [ ] Enable Docker Swarm to run and deploy in multiple hosts
+- [x] Run Pseudo-Distributed Operation
+- [x] Run Cluster Operation
+- [ ] Use Docker Swarm to run and deploy in multiple hosts
