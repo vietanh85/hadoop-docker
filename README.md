@@ -6,7 +6,7 @@ I'm falling in love with Hadoop and Docker. I want to leverage them to "containe
 
 ### Use your Docker repo
 
-If you wish to customize the source code and push the images to your Docker repo for future use, you will need to change `vietanh85` (my Docker account) to yours in the `docker-compose.*.yml` files. You will see the `image` property of the servies.
+If you wish to customize the source code and push the images to your Docker repo for future use, you will need to change `vietanh85` (my Docker account) to yours in the `docker-compose.*.yml` files. You will see the `image` property of the services.
 
 ### Why `Dockerfile.onbuild` and so many `Dockerfile.*`?
 
