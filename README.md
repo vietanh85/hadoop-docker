@@ -15,7 +15,7 @@ For this practice, I'm going to use 2 modules of Hadoop system:
 - Yarn for node/resource management 
 - HDFS for storage. 
 
-All of them could be downloaded in the same package of Hadoop, the only different thing is the starting script. To save my code and effort, I decide to create a base images for all of modules. By doing that, Docker engine will not have to download hadoop package every time it build the images. The hierarchy of our images will be as bellow:
+All of them could be downloaded in the same package of Hadoop, the only different thing is the starting script. To save my code and effort, I decide to create a base images for all modules. By doing that, Docker engine will not have to download hadoop package every time it build the images. The hierarchy of our images will be as bellow:
 
 ![Docker images hierarchy](/img/docker-images-heirarchy.png?raw=true "Docker images hierarchy")
 
