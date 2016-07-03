@@ -21,7 +21,7 @@ All of them could be downloaded in the same package of Hadoop, the only differen
 
 ### Why `docker-compose.build.yml`?
 
-You may know that `docker-compose` is a great tool to define your services with dependencies and wire them up together with one simple command `docker-compose up`.
+You may know that `docker-compose` is a great tool to define your services with dependencies and wire them up together with a simple command `docker-compose up`.
 
 If I use the same `docker-compose.yml` file for both build and run purpose, `docker-compose` will automatically wire up all the services including the base-images (onbuild) which I don't want to start it up. I decide to create the `docker-compose.build.yml` just for build purpose.
 
