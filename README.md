@@ -6,7 +6,7 @@ I'm falling in love with Hadoop and Docker. I want to leverage them to "containe
 
 ### Use your Docker repo
 
-If you wish to customize the source code and push the images to your Docker repo for future use, you will need to change `vietanh85` (my Docker account) to yours in `docker-compose.*.yml` files. You will see the `image` property of servies.
+If you wish to customize the source code and push the images to your Docker repo for future use, you will need to change `vietanh85` (my Docker account) to yours in the `docker-compose.*.yml` files. You will see the `image` property of the servies.
 
 ### Why `Dockerfile.onbuild` and so many `Dockerfile.*`?
 
@@ -15,7 +15,7 @@ For this practice, I'm going to use 2 modules of Hadoop system:
 - Yarn for node/resource management 
 - HDFS for storage. 
 
-All of them could be download in the same package of Hadoop, the only different thing is the starting script. To save my code and effort, I decide to create a base images for all of modules. By doing that, Docker engine will not have to download hadoop package every time it build the images. The hierarchy of our images will be as bellow:
+All of them could be downloaded in the same package of Hadoop, the only different thing is the starting script. To save my code and effort, I decide to create a base images for all of modules. By doing that, Docker engine will not have to download hadoop package every time it build the images. The hierarchy of our images will be as bellow:
 
 ![Docker images hierarchy](/img/docker-images-heirarchy.png?raw=true "Docker images hierarchy")
 
@@ -27,13 +27,13 @@ If I use the same `docker-compose.yml` file for both build and run purpose, `doc
 
 ## Build the images
 
-To build the images automatically, you can just simply run this command and `docker-compose` will take care of the rest:
+To automatically build the images, you can just simply run this command and `docker-compose` will take care of the rest:
 
 ```
 docker-compose -f docker-compose.build.yml build
 ```
 
-To check the build result, you can run `docker images`. You will see your new images there.
+To check the build result, you can run `docker images`, you will see your new images there.
 
 ## Start the containers
 
@@ -68,7 +68,7 @@ $ docker exec hadoopdocker_hadoop_pseudo_1 bash -c "hdfs dfs -cat output/*"
 
 ### Start Cluster containers
 
-Now it's the time to run your Hadoop system in "fully" distributed mode. I put the word "fully" inside double-quotes, since it is not a real fully distributed system which run with multiple hosts. Instead of that, we will run our cluster inside multiple containers and all of them will run on one host.
+Now it's the time to run your Hadoop system in "fully" distributed mode. I put the word "fully" inside double-quotes, since it is not a real fully distributed system which run in multiple hosts. Instead of that, we will run our cluster inside multiple containers and all of them will run in one host.
 
 [IMG]
 
@@ -79,11 +79,12 @@ docker-compose -f docker-compose.cluster.yml up
 ```
 
 docker-compose will start 3 containers including:
-- HDFS name node
-- Yarn 
-- HDFS data node 
+- HDFS (name node)
+- Yarn (both resource and node manager)
+- HDFS (data node)
 
-To see your containers, run `docker ps`. You can easily scale your data nodes using docker-compose as well:
+To see your containers, run `docker ps`. 
+You can easily scale your data nodes using docker-compose as well:
 
 ```
 docker-compose -f docker-compose.cluster.yml scale hdfs_data=3
