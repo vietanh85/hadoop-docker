@@ -84,6 +84,7 @@ docker-compose will start 3 containers including:
 - HDFS (data node)
 
 To see your containers, run `docker ps`. 
+
 You can easily scale your data nodes using docker-compose as well:
 
 ```
