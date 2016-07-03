@@ -70,13 +70,24 @@ $ docker exec hadoopdocker_hadoop_pseudo_1 bash -c "hdfs dfs -cat output/*"
 
 Now it's the time to run your Hadoop system in "fully" distributed mode. I put the word "fully" inside double-quotes, since it is not a real fully distributed system which run with multiple hosts. Instead of that, we will run our cluster inside multiple containers and all of them will run on one host.
 
+[IMG]
+
 To start your [Hadoop Cluster](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/ClusterSetup.html), you can run this command:
 
 ```
 docker-compose -f docker-compose.cluster.yml up
 ```
 
-[IMG]
+docker-compose will start 3 containers including:
+- HDFS name node
+- Yarn 
+- HDFS data node 
+
+To see your containers, run `docker ps`. You can easily scale your data nodes using docker-compose as well:
+
+```
+docker-compose -f docker-compose.cluster.yml scale hdfs_data=3
+```
 
 ### Start Cluster in multiple hosts
 
