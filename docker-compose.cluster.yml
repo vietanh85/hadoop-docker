@@ -1,6 +1,6 @@
 version: '2'
 services:
-  hdfs_name:
+  hdfs_name_node:
     image: 'vietanh85/hadoop-hdfs-name:2.7.1'
     build: 
       context: '.'
@@ -25,7 +25,7 @@ services:
     - '10800:10800'
     - '10020:10020'
     links:
-    - 'hdfs_name:namenode'
+    - 'hdfs_name_node:namenode'
     environment:
       NAME_NODE_HOST: 'namenode'
 
@@ -35,7 +35,7 @@ services:
       context: '.'
       dockerfile: Dockerfile.hdfs.data
     links:
-    - 'hdfs_name:namenode'
+    - 'hdfs_name_node:namenode'
     - 'yarn'
     environment:
       NAME_NODE_HOST: 'namenode'

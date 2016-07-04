@@ -1,0 +1,9 @@
+Vagrant.configure("2") do |config|
+  (1..3).each do |i|
+    config.vm.define "worker#{i}" do |worker|
+      worker.vm.hostname = "worker#{i}"
+      worker.vm.box = "vietanh85/hadoop-docker"
+      worker.vm.network "private_network", type: "dhcp"
+    end
+  end
+end
