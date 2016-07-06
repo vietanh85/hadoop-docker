@@ -93,6 +93,8 @@ docker-compose -f docker-compose.cluster.yml scale hdfs_data=3
 
 ### Start Cluster in multiple hosts
 
+Issue: https://github.com/docker/swarmkit/issues/939
+
 TBD
 
 ## Todos
