@@ -1,7 +1,7 @@
 FROM java:8u45
 
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 \
-    HADOOP_VERSION=2.7.1 \
+    HADOOP_VERSION=3.0.0 \
     HADOOP_HOME=/usr/share/hadoop
 
 ENV HADOOP_PREFIX=$HADOOP_HOME \
